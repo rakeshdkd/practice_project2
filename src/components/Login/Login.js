@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useReducer } from "react";
 
 import Card from "../UI/Card/Card";
+import Inputs from "./Inputs";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
 
@@ -53,7 +54,7 @@ const Login = (props) => {
 
   const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
-  
+
   useEffect(() => {
     const identifier = setTimeout(() => {
       console.log("Checking form validity!");
@@ -104,7 +105,7 @@ const Login = (props) => {
           }`}
         >
           <label htmlFor="email">E-Mail</label>
-          <input
+          <Inputs
             type="email"
             id="email"
             value={emailState.value}
@@ -118,7 +119,7 @@ const Login = (props) => {
           }`}
         >
           <label htmlFor="password">Password</label>
-          <input
+          <Inputs
             type="password"
             id="password"
             value={passwordState.value}
